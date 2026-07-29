@@ -7,16 +7,28 @@ public class Livro {
     private int anoPublicacao;
     private String status;
 
-    public Livro(int codigo, String nome, String autor, int anoPublicacao){
+    public Livro(int codigo, String nome, String autor, int anoPublicacao, String status){
         this.codigo = codigo;
         this.nome = nome;
         this.autor = autor;
-        this.anoPublicacao = getAnoPublicacao();
+        this.anoPublicacao = anoPublicacao;
+        this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return  "---------------------------" +
+                "\ncódigo: " + this.getCodigo() +
+                "\nnome: " + this.getNome() +
+                "\nautor: " + this.getAutor() +
+                "\nAno publicação: " + this.getAnoPublicacao() +
+                "\nStatus: " + this.getStatus() +
+                "---------------------------";
+    }
 
-
-
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public int getCodigo() {
         return codigo;
