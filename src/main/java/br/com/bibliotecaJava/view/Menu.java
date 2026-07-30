@@ -30,17 +30,35 @@ public class Menu {
 
                 case 2:
                     listarLivros();
-                    break; /*
-                case 3:
-                    int codigo = 0;
-                    buscalivroPorId(codigo);
                     break;
-*/
+                case 3:
+                    imprimeLivro();
+                    break;
+
                 default:
-                    System.out.println("opção invalida");
+                    System.out.println("opção invalida XD");
             }
 
         }while(opcao != 0);
+    }
+
+    private Livro buscaCodigoLivro(){
+        System.out.println("Informe o codigo: ");
+        int leituracodigo = leitura.nextInt();
+        leitura.nextLine();
+
+        Livro livrobuscado = service.buscarPorCodigo(leituracodigo);
+        return livrobuscado;
+    }
+
+    public void imprimeLivro(){
+        Livro livro = buscaCodigoLivro();
+
+        if(livro != null){
+            System.out.println(livro.toString());
+        } else{
+            System.out.println("livro não encontrado");
+        }
     }
 
     private void cadastrarLivro(){
