@@ -2,14 +2,14 @@ package main.java.br.com.bibliotecaJava.model;
 
 public class Livro {
     private int codigo;
-    private String nome;
+    private String titulo;
     private String autor;
     private int anoPublicacao;
     private String status;
 
-    public Livro(int codigo, String nome, String autor, int anoPublicacao, String status){
+    public Livro(int codigo, String titulo, String autor, int anoPublicacao, String status){
         this.codigo = codigo;
-        this.nome = nome;
+        this.titulo = titulo;
         this.autor = autor;
         this.anoPublicacao = anoPublicacao;
         this.status = status;
@@ -19,11 +19,11 @@ public class Livro {
     public String toString() {
         return  "---------------------------" +
                 "\ncódigo: " + this.getCodigo() +
-                "\nnome: " + this.getNome() +
+                "\nTítulo: " + this.getTitulo() +
                 "\nautor: " + this.getAutor() +
                 "\nAno publicação: " + this.getAnoPublicacao() +
                 "\nStatus: " + this.getStatus() +
-                "---------------------------";
+                "\n---------------------------";
     }
 
     public void setStatus(String status) {
@@ -33,8 +33,8 @@ public class Livro {
     public int getCodigo() {
         return codigo;
     }
-    public String getNome() {
-        return nome;
+    public String getTitulo() {
+        return titulo;
     }
     public String getAutor() {
         return autor;

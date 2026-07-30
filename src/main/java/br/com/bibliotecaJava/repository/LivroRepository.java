@@ -15,4 +15,14 @@ public class LivroRepository {
         return listaLivros;
     }
 
+    public Livro buscarPorCodigo(int codigo) {
+        for (Livro livro : listaLivros) {
+            if (livro.getCodigo() == codigo) {
+                return livro;
+            }
+        }
+        return null;
+    }
+
+
 }

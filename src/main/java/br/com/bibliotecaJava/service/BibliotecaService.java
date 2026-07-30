@@ -21,6 +21,10 @@ public class BibliotecaService {
         }
     }
 
+    public Livro buscarPorCodigo(int codigo) {
+        return repository.buscarPorCodigo(codigo);
+    }
+
     /*
     emprestar livro
 

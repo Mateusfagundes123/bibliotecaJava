@@ -1,5 +1,6 @@
 package main.java.br.com.bibliotecaJava.view;
 
+import main.java.br.com.bibliotecaJava.model.Livro;
 import main.java.br.com.bibliotecaJava.service.BibliotecaService;
 
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class Menu {
             System.out.println("---- Biblioteca XD-----");
             System.out.println(" 1 - cadastrar livro");
             System.out.println(" 2 - Listar livros");
+            System.out.println(" 3 - Mostrar livro pelo ID");
 
             System.out.println(" 0 - Sair");
 
@@ -28,8 +30,12 @@ public class Menu {
 
                 case 2:
                     listarLivros();
+                    break; /*
+                case 3:
+                    int codigo = 0;
+                    buscalivroPorId(codigo);
                     break;
-
+*/
                 default:
                     System.out.println("opção invalida");
             }
@@ -38,8 +44,19 @@ public class Menu {
     }
 
     private void cadastrarLivro(){
-        System.out.print("Código: ");
-        int codigo = leitura.nextInt();
+        int codigo = 0;
+        while (true){
+            System.out.println("código: ");
+            codigo = leitura.nextInt();
+            Livro livroDeBusca = service.buscarPorCodigo(codigo);
+            if(livroDeBusca != null){
+                if(livroDeBusca.getCodigo() == codigo){ /*ver pois não precisa*/
+                    System.out.println("Código já usado ");
+                }
+            }else{
+                break;
+            }
+        }
         leitura.nextLine();
 
         System.out.print("Título: ");
@@ -48,12 +65,19 @@ public class Menu {
         System.out.print("Autor: ");
         String autor = leitura.nextLine();
 
-        System.out.print("Ano: ");
-        int ano = leitura.nextInt();
+        int ano = 0;
+        while(ano < 1800 || ano > 2030){
+            System.out.print("Ano: ");
+            ano = leitura.nextInt();
+            if(ano < 1800 || ano > 2030){
+                System.out.println("Informe um ano válido ");
+            }
+        }
         leitura.nextLine();
 
         service.cadastrarLivro(codigo, titulo, autor, ano);
     }
+
     private void listarLivros(){
         service.listarLivros();
     }
