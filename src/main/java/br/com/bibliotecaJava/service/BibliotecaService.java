@@ -29,6 +29,11 @@ public class BibliotecaService {
         repository.deletarLivro(livro);
         System.out.println("Livro deletado");
     }
+    public void emprestarLivro(Livro livro){
+        repository.emprestarLivro(livro);
+        System.out.println("livro emprestado.");
+    }
+
 
     /*
     emprestar livro
