@@ -24,5 +24,9 @@ public class LivroRepository {
         return null;
     }
 
+    public void deletarLivro(Livro livro){
+        listaLivros.remove(livro);
+    }
+
 
 }

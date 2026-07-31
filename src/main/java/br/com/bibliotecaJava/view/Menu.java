@@ -12,10 +12,11 @@ public class Menu {
     public void iniciar(){
         int opcao;
         do{
-            System.out.println("---- Biblioteca XD-----");
+            System.out.println("------- Biblioteca XD --------");
             System.out.println(" 1 - cadastrar livro");
             System.out.println(" 2 - Listar livros");
             System.out.println(" 3 - Mostrar livro pelo ID");
+            System.out.println(" 4 - Deletar livro");
 
             System.out.println(" 0 - Sair");
 
@@ -27,13 +28,16 @@ public class Menu {
                 case 1:
                     cadastrarLivro();
                     break;
-
                 case 2:
                     listarLivros();
                     break;
                 case 3:
                     imprimeLivro();
                     break;
+                case 4:
+                    deletarLivro();
+                    break;
+
 
                 default:
                     System.out.println("opção invalida XD");
@@ -99,4 +103,14 @@ public class Menu {
     private void listarLivros(){
         service.listarLivros();
     }
-}
+
+    private void deletarLivro() {
+        Livro livro = buscaCodigoLivro();
+        if (livro != null) {
+            service.deletarLivro(livro);
+        } else {
+            System.out.println("livro não encontrado");
+        }
+    }
+
+    }

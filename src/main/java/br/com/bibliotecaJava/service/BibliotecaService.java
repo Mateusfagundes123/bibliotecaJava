@@ -25,6 +25,11 @@ public class BibliotecaService {
         return repository.buscarPorCodigo(codigo);
     }
 
+    public void deletarLivro(Livro livro){
+        repository.deletarLivro(livro);
+        System.out.println("Livro deletado");
+    }
+
     /*
     emprestar livro
 
