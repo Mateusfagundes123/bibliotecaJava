@@ -34,6 +34,11 @@ public class BibliotecaService {
         System.out.println("livro emprestado.");
     }
 
+    public void devolverLivro(Livro livro){
+        repository.devolverLivro(livro);
+        System.out.println("livro devolvido.");
+    }
+
 
     /*
     emprestar livro

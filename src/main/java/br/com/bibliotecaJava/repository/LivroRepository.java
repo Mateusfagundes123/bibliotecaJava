@@ -33,5 +33,9 @@ public class LivroRepository {
         livro.setStatus("Livro emprestado");
     }
 
+    public void devolverLivro(Livro livro){
+        livro.setStatus("Livro devolvido");
+    }
+
 
 }

@@ -13,14 +13,14 @@ public class Menu {
         int opcao;
         do{
             System.out.println("------- Biblioteca XD --------");
-            System.out.println(" 1 - cadastrar livro");
-            System.out.println(" 2 - Listar livros");
-            System.out.println(" 3 - Mostrar livro pelo ID");
-            System.out.println(" 4 - Deletar livro");
-            System.out.println(" 5 - Realizar emprestimo");
-            System.out.println(" 6 - Realizar devolução");
-
-            System.out.println(" 0 - Sair");
+            System.out.println("| 1 - cadastrar livro");
+            System.out.println("| 2 - Listar livros");
+            System.out.println("| 3 - Mostrar livro pelo ID");
+            System.out.println("| 4 - Deletar livro");
+            System.out.println("| 5 - Realizar emprestimo");
+            System.out.println("| 6 - Realizar devolução");
+            System.out.println("| 0 - Sair");
+            System.out.println("-----------------------------");
 
             System.out.println("Opção: ");
             opcao = leitura.nextInt();
@@ -42,7 +42,9 @@ public class Menu {
                 case 5:
                     emprestarLivro();
                     break;
-
+                case 6:
+                    devolverLivro();
+                    break;
 
                 default:
                     System.out.println("opção invalida XD");
@@ -64,6 +66,15 @@ public class Menu {
         Livro livro = buscaCodigoLivro();
         if (livro != null) {
            service.emprestarLivro(livro);
+        } else {
+            System.out.println("livro não encontrado");
+        }
+    }
+
+    public void devolverLivro(){
+        Livro livro = buscaCodigoLivro();
+        if (livro != null) {
+            service.devolverLivro(livro);
         } else {
             System.out.println("livro não encontrado");
         }

@@ -18,11 +18,11 @@ public class Livro {
     @Override
     public String toString() {
         return  "---------------------------" +
-                "\ncódigo: " + this.getCodigo() +
-                "\nTítulo: " + this.getTitulo() +
-                "\nautor: " + this.getAutor() +
-                "\nAno publicação: " + this.getAnoPublicacao() +
-                "\nStatus: " + this.getStatus() +
+                "\n| código: " + this.getCodigo() +
+                "\n| Título: " + this.getTitulo() +
+                "\n| autor: " + this.getAutor() +
+                "\n| Ano publicação: " + this.getAnoPublicacao() +
+                "\n| Status: " + this.getStatus() +
                 "\n---------------------------";
     }
 
