@@ -24,5 +24,18 @@ public class LivroRepository {
         return null;
     }
 
+    public void deletarLivro(Livro livro){
+        listaLivros.remove(livro);
+    }
+
+
+    public void emprestarLivro(Livro livro){
+        livro.setStatus("Livro emprestado");
+    }
+
+    public void devolverLivro(Livro livro){
+        livro.setStatus("Livro devolvido");
+    }
+
 
 }
